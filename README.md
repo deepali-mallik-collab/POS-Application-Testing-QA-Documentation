@@ -165,17 +165,6 @@ Version: 1.0
 
 **LOGIN & AUTHENTICATION TEST CASES**
 1. TC_POS_LOGIN_001 – Valid Login
-| Field           | Value                                                           |
-| --------------- | --------------------------------------------------------------- |
-| Test Case ID    | TC_POS_LOGIN_001                                                |
-| Scenario        | User Authentication                                             |
-| Description     | Verify login with valid credentials                             |
-| Pre-Conditions  | POS terminal powered on                                         |
-| Steps           | 1. Open POS app 2. Enter valid username/password 3. Click Login |
-| Test Data       | Valid user credentials                                          |
-| Expected Result | User logged in successfully                                     |
-| Test Type       | Functional                                                      |
-| Priority        | High                                                            |
 
 | Field           | Value                                                           |
 | --------------- | --------------------------------------------------------------- |
