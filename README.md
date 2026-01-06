@@ -179,6 +179,7 @@ Version: 1.0
 | Priority        | High                                                            |
 
 2. TC_POS_LOGIN_002 – Invalid Password
+
 | Field           | Value                                                                       |
 | --------------- | --------------------------------------------------------------- ----------- |
 | Test Case ID    | TC_POS_LOGIN_002                                                            |
