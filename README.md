@@ -179,14 +179,15 @@ Version: 1.0
 | Priority        | High                                                            |
 
 2. TC_POS_LOGIN_002 – Invalid Password
-| Field           | Value                                                                     |
-| --------------- | ------------------------------------------------------------------------- |
-| Test Case ID    | TC_POS_LOGIN_002                                                          |
-| Scenario        | User Authentication                                                       |
-| Description     | Verify error on invalid password                                          |
-| Pre-Conditions  | POS terminal powered on                                                   |
-| Steps           | 1. Open POS app 2. Enter valid username + invalid password 3. Click Login |
-| Test Data       | Invalid user credentials                                                  |
-| Expected Result | Error message displayed                                                   |
-| Test Type       | Negative                                                                  |
-| Priority        | High                                                                      |
+| Field           | Value                                                                       |
+| --------------- | --------------------------------------------------------------- ----------- |
+| Test Case ID    | TC_POS_LOGIN_002                                                            |
+| Scenario        | User Authentication                                                         |
+| Description     | Verify error on invalid password                                            |
+| Pre-Conditions  | POS terminal powered on                                                     |
+| Steps           | 1. Open POS app 2. Enter valid username but invalid password 3. Click Login |
+| Test Data       | Valid username and invalid password                                         |
+| Expected Result | Error message displayed                                                     |
+| Test Type       | Negative                                                                    |
+| Priority        | High                                                                        |
+
