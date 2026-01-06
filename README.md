@@ -140,3 +140,52 @@ Test Data Management:
 | Deepali Mallik  | QA Engineer   | ______    | ______ |
 | [QA Lead Name]  | QA Lead       | ______    | ______ |
 | [Product Owner] | Product Owner | ______    | ______ |
+
+# IEEE 829 – DETAILED TEST CASE SPECIFICATION
+Project: POS Application – Banking/Finance
+Document Type: Test Case Specification
+Prepared By: Deepali Mallik
+Version: 1.0
+
+**Test Case Template (Excel / TestRail Ready)**
+| Field                 | Description                            |
+| --------------------- | -------------------------------------- |
+| Test Case ID          | Unique ID                              |
+| Test Scenario         | High-level scenario                    |
+| Test Case Description | What is being tested                   |
+| Pre-Conditions        | Setup required                         |
+| Test Steps            | Step-by-step actions                   |
+| Test Data             | Input values                           |
+| Expected Result       | Expected outcome                       |
+| Test Type             | Functional / Security / Boundary / etc |
+| Priority              | High / Medium / Low                    |
+| Actual Result         | Filled during execution                |
+| Status                | Pass / Fail                            |
+| Comments              | Notes                                  |
+
+**LOGIN & AUTHENTICATION TEST CASES**
+1. TC_POS_LOGIN_001 – Valid Login
+| Field           | Value                                                           |
+| --------------- | --------------------------------------------------------------- |
+| Test Case ID    | TC_POS_LOGIN_001                                                |
+| Scenario        | User Authentication                                             |
+| Description     | Verify login with valid credentials                             |
+| Pre-Conditions  | POS terminal powered on                                         |
+| Steps           | 1. Open POS app 2. Enter valid username/password 3. Click Login |
+| Test Data       | Valid user credentials                                          |
+| Expected Result | User logged in successfully                                     |
+| Test Type       | Functional                                                      |
+| Priority        | High                                                            |
+
+2. TC_POS_LOGIN_002 – Invalid Password
+| Field           | Value                                                                     |
+| --------------- | ------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_LOGIN_002                                                          |
+| Scenario        | User Authentication                                                       |
+| Description     | Verify error on invalid password                                          |
+| Pre-Conditions  | POS terminal powered on                                                   |
+| Steps           | 1. Open POS app 2. Enter valid username + invalid password 3. Click Login |
+| Test Data       | Invalid user credentials                                                  |
+| Expected Result | Error message displayed                                                   |
+| Test Type       | Negative                                                                  |
+| Priority        | High                                                                      |
