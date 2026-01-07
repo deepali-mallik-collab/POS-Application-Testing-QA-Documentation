@@ -192,4 +192,16 @@ Version: 1.0
 | Test Type       | Negative                                                                    |
 | Priority        | High                                                                        |
 
+3. TC_POS_LOGIN_003 – SQL Injection Attempt
 
+| Field           | Value                                                                       |
+| --------------- | --------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_LOGIN_003                                                            |
+| Scenario        | User Authentication                                                         |
+| Description     | Verify system prevents SQL injection                                        |
+| Pre-Conditions  | POS terminal powered on                                                     |
+| Steps           | 1. Open POS app 2. Enter username but password 3. Click Login               |
+| Test Data       | ' OR 1=1 --                                                                 |
+| Expected Result | Login blocked, no DB access                                                 |
+| Test Type       | Security                                                                    |
+| Priority        | Critical                                                                    |
