@@ -264,7 +264,7 @@ Version: 1.0
 
 | Field           | Value                                                                       |
 | --------------- | --------------------------------------------------------------------------- |
-| Test Case ID    | TC_POS_CASH_003                                                             |
+| Test Case ID    | TC_POS_CASH_004                                                             |
 | Scenario        | Large Amount                                                                |
 | Description     | Maximum allowed transaction                                                 |
 | Steps           | 1. Add item 2. Select Cash 3. Enter amount                                  |
@@ -274,3 +274,15 @@ Version: 1.0
 | Priority        | High                                                                        |
 
 **CARD TRANSACTION TEST CASES**
+1. TC_POS_CARD_001 – Valid Debit Card
+
+| Field           | Value                                                                       |
+| --------------- | --------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_CARD_001                                                             |
+| Scenario        | Valid Debit Card                                                            |
+| Description     | Successful debit card payment                                               |
+| Steps           | 1. Add item 2. Select Card payment 3. Enter Card details                    |
+| Test Data       | Valid card, Valid PIN                                                       |
+| Expected Result | Payment approved                                                            |
+| Test Type       | Functional                                                                  |
+| Priority        | High                                                                        |
