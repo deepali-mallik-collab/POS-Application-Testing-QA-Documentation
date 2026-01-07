@@ -169,7 +169,7 @@ Version: 1.0
 | Field           | Value                                                           |
 | --------------- | --------------------------------------------------------------- |
 | Test Case ID    | TC_POS_LOGIN_001                                                |
-| Scenario        | User Authentication                                             |
+| Scenario        | Valid Login                                                     |
 | Description     | Verify login with valid credentials                             |
 | Pre-Conditions  | POS terminal powered on                                         |
 | Steps           | 1. Open POS app 2. Enter valid username/password 3. Click Login |
@@ -183,7 +183,7 @@ Version: 1.0
 | Field           | Value                                                                       |
 | --------------- | --------------------------------------------------------------------------- |
 | Test Case ID    | TC_POS_LOGIN_002                                                            |
-| Scenario        | User Authentication                                                         |
+| Scenario        | Invalid Password                                                            |
 | Description     | Verify error on invalid password                                            |
 | Pre-Conditions  | POS terminal powered on                                                     |
 | Steps           | 1. Open POS app 2. Enter valid username but invalid password 3. Click Login |
@@ -197,7 +197,7 @@ Version: 1.0
 | Field           | Value                                                                       |
 | --------------- | --------------------------------------------------------------------------- |
 | Test Case ID    | TC_POS_LOGIN_003                                                            |
-| Scenario        | User Authentication                                                         |
+| Scenario        | SQL Injection Attempt                                                       |
 | Description     | Verify system prevents SQL injection                                        |
 | Pre-Conditions  | POS terminal powered on                                                     |
 | Steps           | 1. Open POS app 2. Enter username but password 3. Click Login               |
@@ -205,3 +205,72 @@ Version: 1.0
 | Expected Result | Login blocked, no DB access                                                 |
 | Test Type       | Security                                                                    |
 | Priority        | Critical                                                                    |
+
+4. TC_POS_LOGIN_004 – Session Timeout
+
+| Field           | Value                                                                       |
+| --------------- | --------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_LOGIN_003                                                            |
+| Scenario        | Session Timeout                                                             |
+| Description     | Verify auto logout after inactivity                                         |
+| Pre-Conditions  | POS terminal powered on                                                     |
+| Steps           | 1. Login 2. Stay idle for configured timeout                                |
+| Test Data       | ---                                                                         |
+| Expected Result | User logged out                                                             |
+| Test Type       | Security                                                                    |
+| Priority        | High                                                                        |
+
+**CASH TRANSACTION TEST CASES**
+1. TC_POS_CASH_001 – Valid Cash Payment
+
+| Field           | Value                                                                       |
+| --------------- | --------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_CASH_001                                                             |
+| Scenario        | Valid Cash Payment                                                          |
+| Description     | Process cash payment successfully                                           |
+| Steps           | 1. Add item 2. Select Cash 3. Enter amount                                  |
+| Test Data       | Amount = 100                                                                |
+| Expected Result | Transaction approved                                                        |
+| Test Type       | Functional                                                                  |
+| Priority        | High                                                                        |
+
+2. TC_POS_CASH_002 – Insufficient Cash
+
+| Field           | Value                                                                       |
+| --------------- | --------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_CASH_002                                                             |
+| Scenario        | Insufficient Cash                                                           |
+| Description     | Cash less than total amount                                                 |
+| Steps           | 1. Add item 2. Select Cash 3. Enter amount                                  |
+| Test Data       | Total = 100, Paid = 80                                                      |
+| Expected Result | Error message                                                               |
+| Test Type       | Negative                                                                    |
+| Priority        | High                                                                        |
+
+3. TC_POS_CASH_003 – Boundary Amount
+
+| Field           | Value                                                                       |
+| --------------- | --------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_CASH_003                                                             |
+| Scenario        | Boundary Amount                                                             |
+| Description     | Minimum allowed transaction                                                 |
+| Steps           | 1. Add item 2. Select Cash 3. Enter amount                                  |
+| Test Data       | Amount = 0.01                                                               |
+| Expected Result | Transaction processed                                                       |
+| Test Type       | Boundary                                                                    |
+| Priority        | High                                                                        |
+
+4. TC_POS_CASH_004 – Large Amount
+
+| Field           | Value                                                                       |
+| --------------- | --------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_CASH_003                                                             |
+| Scenario        | Large Amount                                                                |
+| Description     | Maximum allowed transaction                                                 |
+| Steps           | 1. Add item 2. Select Cash 3. Enter amount                                  |
+| Test Data       | Amount = 999,999.99                                                         |
+| Expected Result | Transaction processed or warning                                            |
+| Test Type       | Boundary                                                                    |
+| Priority        | High                                                                        |
+
+**CARD TRANSACTION TEST CASES**
