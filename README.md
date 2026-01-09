@@ -341,14 +341,30 @@ Version: 1.0
 **REFUND & VOID TRANSACTIONS**
 1. TC_POS_REFUND_001 – Valid Refund
 
-| Field           | Value                                                                                                                 |
-| --------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Test Case ID    | TC_POS_REFUND_001                                                                                                     |
-| Scenario        | Valid Refund                                                                                                          |
-| Description     | Refund for completed transaction                                                                                      |
-| Pre-Conditions  | 1. POS system is running 2. A completed transaction exists in the system. 3 User has valid cashier/admin credentials. |
-| Steps           | 1. Login to POS as cashier/admin. 2. Navigate to the "Transaction history" screen . 3. Select a completed transaction to refund. 4. Click the "Refund" button. 5. Confirm the refund amount. 6. Submit the refund. 7. Verify the transaction status updates to "Refunded".                                                                       |
-| Test Data       | Valid cashier/admin credentials and trasaction history                                                                |
-| Expected Result | Refund is processed successfully, customer receives notification/receipt.                                             |
-| Test Type       | Functional                                                                                                            |
-| Priority        | High                                                                                                                  |
+| Field           | Value                                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_REFUND_001                                                                                                      |
+| Scenario        | Valid Refund                                                                                                           | 
+| Description     | Refund for completed transaction                                                                                       |
+| Pre-Conditions  | 1. POS system is running 2. A completed transaction exists in the system. 3. User has valid cashier/admin credentials. |
+| Steps           | 1. Login to POS as cashier/admin. 2. Navigate to the "Transaction history" screen . 3. Select a completed transaction to refund. 4. Click the "Refund" button. 5. Confirm the refund amount. 6. Submit the refund. 7. Verify the transaction status updates to "Refunded".                                                                        |
+| Test Data       | Valid cashier/admin credentials and trasaction history                                                                 |
+| Expected Result | Refund is processed successfully, customer receives notification/receipt.                                              |
+| Test Type       | Functional                                                                                                             |
+| Priority        | High                                                                                                                   |
+
+2. TC_POS_REFUND_002 – Refund Without Original Transaction
+
+| Field           | Value                                                                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_REFUND_002                                                                                                                                                    |
+| Scenario        | Refund Without Original Transactions                                                                                                                                 |
+| Description     | Attempt refund without receipt                                                                                                                                       |
+| Pre-Conditions  | 1. POS system is running 2. User has valid cashier/admin credentials.                                                                                                |
+| Steps           | 1. Login to POS. 2. Navigate to the "Refund/Return" screen. 3. Enter a transaction ID that does not exist. 4. Click the "Refund" button. 5. Observe system behavior. |
+| Test Data       | Valid cashier/admin credentials and trasaction history                                                                                                               |
+| Expected Result | Refund is denied, appropriate error message displayed.                                                                                                               |
+| Test Type       | Negative                                                                                                                                                             |
+| Priority        | High                                                                                                                                                                 |
+
+3. 
