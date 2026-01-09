@@ -1,5 +1,17 @@
 # POS-Application-Testing-QA-Documentation
-A comprehensive QA testing blueprint for a POS (Point of Sale) application in a banking/finance environment. It includes test plan, test strategies, and detailed test cases covering positive, negative, edge cases, security, functional, and boundary value testing.
+This repository contains comprehensive QA documentation for a Point-of-Sale (POS) application. It demonstrates test plan, test strategies, and detailed test cases covering positive, negative, edge cases, security, functional, and boundary value testing.
+
+**Objectives**
+- Ensure critical workflows (checkout, payment, login) work reliably.
+- Identify high-risk scenarios before production.
+- Provide clear documentation for reproducibility and knowledge sharing.
+- Validate data integrity for reporting and analytics.
+
+**Test Strategy**
+- Risk-Based Testing: Critical business workflows are tested first; secondary workflows are tested next.
+- Positive & Negative Testing: Includes both expected behavior and edge-case scenarios.
+- Exploratory Testing: Covers unplanned or dynamic scenarios not captured in requirements.
+- Regression Testing: Automated and manual tests ensure no existing functionality breaks after updates.
 
 # POS Application Test Plan – IEEE 829 Standard
 
@@ -286,3 +298,57 @@ Version: 1.0
 | Expected Result | Payment approved                                                            |
 | Test Type       | Functional                                                                  |
 | Priority        | High                                                                        |
+
+2. TC_POS_CARD_002 – Invalid PIN
+
+| Field           | Value                                                                       |
+| --------------- | --------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_CARD_002                                                             |
+| Scenario        | Invalid PIN                                                                 |
+| Description     | Decline on wrong PIN                                                        |
+| Steps           | 1. Add item 2. Select Card payment 3. Enter Card details                    |
+| Test Data       | Valid card, Invalid PIN                                                     |
+| Expected Result | Transaction declined                                                        |
+| Test Type       | Negative                                                                    |
+| Priority        | High                                                                        |
+
+3. TC_POS_CARD_003 – Card Removed Mid-Transaction
+
+| Field           | Value                                                                       |
+| --------------- | --------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_CARD_003                                                             |
+| Scenario        | Card Removed Mid-Transaction                                                |
+| Description     | Handle interrupted card read                                                |
+| Steps           | 1. Add item 2. Select Card payment 3. Enter Card details 4. Remove card     |
+| Test Data       | Valid card                                                                  |
+| Expected Result | Transaction cancelled safely                                                |
+| Test Type       | Edge Case                                                                   |
+| Priority        | High                                                                        |
+
+4. TC_POS_CARD_004 – Network Failure
+
+| Field           | Value                                                                       |
+| --------------- | --------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_CARD_004                                                             |
+| Scenario        | Network Failure                                                             |
+| Description     | Card transaction during network outage                                      |
+| Steps           | 1. Add item 2. Select Card payment 3. Enter Card details 4. Remove card     |
+| Test Data       | Valid card                                                                  |
+| Expected Result | Transaction queued or failed gracefully with a failure message              |
+| Test Type       | Edge Case / Reliability                                                     |
+| Priority        | High                                                                        |
+
+**REFUND & VOID TRANSACTIONS**
+1. TC_POS_REFUND_001 – Valid Refund
+
+| Field           | Value                                                                                                                 |
+| --------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_REFUND_001                                                                                                     |
+| Scenario        | Valid Refund                                                                                                          |
+| Description     | Refund for completed transaction                                                                                      |
+| Pre-Conditions  | 1. POS system is running 2. A completed transaction exists in the system. 3 User has valid cashier/admin credentials. |
+| Steps           | 1. Login to POS as cashier/admin. 2. Navigate to the "Transaction history" screen . 3. Select a completed transaction to refund. 4. Click the "Refund" button. 5. Confirm the refund amount. 6. Submit the refund. 7. Verify the transaction status updates to "Refunded".                                                                       |
+| Test Data       | Valid cashier/admin credentials and trasaction history                                                                |
+| Expected Result | Refund is processed successfully, customer receives notification/receipt.                                             |
+| Test Type       | Functional                                                                                                            |
+| Priority        | High                                                                                                                  |
