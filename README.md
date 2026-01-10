@@ -367,4 +367,59 @@ Version: 1.0
 | Test Type       | Negative                                                                                                                                                             |
 | Priority        | High                                                                                                                                                                 |
 
-3. 
+3. TC_POS_REFUND_003 – Partial Refund
+
+| Field           | Value                                                                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_REFUND_003                                                                                                                                                    |
+| Scenario        | Partial Refund                                                                                                                                                       |
+| Description     | Refund partial amount                                                                                                                                                |
+| Pre-Conditions  | 1. POS system is running 2. Completed transaction exists with multiple items or sufficient amount for partial refund.                                                |
+| Steps           | 1. Login to POS. 2. Navigate to "Transaction History”. 3. Select a transaction for partial refund. 4. Choose items/amount to refund partially. 5. Click “Refund Partial”. 6. Confirm partial refund. 7. Verify updated transaction total and refund record.                                                                                                                                   |
+| Test Data       | Valid cashier/admin credentials and trasaction history                                                                                                               |
+| Expected Result | Partial refund processed correctly, transaction updated accurately.                                                                                                  |
+| Test Type       | Edge Case                                                                                                                                                            |
+| Priority        | High                                                                                                                                                                 |
+
+**DATABASE & SQL VALIDATION**
+1. TC_POS_DB_001 – Transaction Stored Correctly
+
+| Field           | Value                                                                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Test Case ID    | TC_POS_DB_001                                                                                                                                                        |
+| Scenario        | Transaction Stored Correctly                                                                                                                                         |
+| Description     | Validate DB entry after transaction                                                                                                                                  |
+| Pre-Conditions  | 1. POS system connected to database. 2. Transaction completed on POS.                                                                                                |
+| Steps           | 1. Capture the transaction ID from POS. 2. Open SQL client (MySQL, Oracle, PostgreSQL). 3. Run: SELECT * FROM transactions WHERE id = <transaction_id>. 4. Verify transaction details: amount, timestamp, status, items.                                                                                                                                                                |
+| SQL             | SELECT * FROM transactions WHERE id = <transaction_id>                                                                                                               |
+| Expected Result | Database record matches POS transaction exactly.                                                                                                                     |
+| Test Type       | Backend / SQL                                                                                                                                                        |
+| Priority        | High                                                                                                                                                                 |
+
+2. TC_POS_DB_002 – Rollback on Failure
+
+**SECURITY TEST CASES**
+1. TC_POS_SEC_001 – Encrypted Card Data
+
+2. TC_POS_SEC_002 – Role-Based Access
+
+**UI / UX TEST CASES**
+1. TC_POS_UI_001 – Button Visibility
+
+2. TC_POS_UI_002 – Error Message Clarity
+
+**PERFORMANCE & RELIABILITY**
+1. TC_POS_PERF_001 – Concurrent Transactions
+
+2. TC_POS_PERF_002 – Long Running Session
+
+**HARDWARE & DEVICE TESTING**
+1. TC_POS_HW_001 – Receipt Printer Failure
+
+2. TC_POS_HW_002 – Barcode Scanner Input
+
+**REGRESSION & RECOVERY**
+1. TC_POS_REG_001 – Regression After Patch
+
+2. TC_POS_REC_001 – Power Failure Recovery
+
