@@ -398,6 +398,17 @@ Version: 1.0
 
 2. TC_POS_DB_002 – Rollback on Failure
 
+| Field           | Value                                                                                                                                                                    |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Test Case ID    | TC_POS_DB_002                                                                                                                                                            |
+| Scenario        | Rollback on Failure                                                                                                                                                      |
+| Description     | Validate DB entry after transaction                                                                                                                                      |
+| Pre-Conditions  | 1. POS system connected to database. 2. Database connection active.                                                                                                      |
+| Steps           | 1. Simulate failure during transaction (e.g., network disconnect or DB write error). 2. Attempt to process transaction. 3. Query database for partially written records. |
+| Expected Result | No partial records; database rollback occurs.                                                                                                                            |
+| Test Type       | Backend / SQL                                                                                                                                                            |
+| Priority        | High                                                                                                                                                                     |
+
 **SECURITY TEST CASES**
 1. TC_POS_SEC_001 – Encrypted Card Data
 
